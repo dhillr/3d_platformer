@@ -106,7 +106,7 @@ void setup() {
   
   saveBytes("levels/level1.dat", new byte[0]);
   writeHitbox(new Hitbox(0, 275, 0, 500, 500, 500, false));
-  writeHitbox(new Hitbox(500, 275, 0, 500, 500, 500, true));
+  writeHitbox(new Hitbox(0, 0, 250, 20, 20, 20, true));
   
   world = new World(getHitboxes("levels/level1.dat"));
   
@@ -150,7 +150,7 @@ void draw() {
   
   player.draw();
   if (!player.update()) {
-    println("u died lol");
+    return;
   }
   
   push();
